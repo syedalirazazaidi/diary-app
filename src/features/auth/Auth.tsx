@@ -31,7 +31,6 @@ const Auth: FC = () => {
       .post<User, AuthResponse>(path, data)
       .then((res) => {
         if (res) {
-          console.log(res, 'RESPONSAT');
           const { user, token } = res;
           dispatch(saveToken(token));
           dispatch(setUser(user));
@@ -56,7 +55,6 @@ const Auth: FC = () => {
               <p className="error">{errors.username.message}</p>
             )}
           </div>
-
           <div className="inputWrapper">
             <input
               ref={register}
@@ -68,7 +66,6 @@ const Auth: FC = () => {
               <p className="error">{errors.password.message}</p>
             )}
           </div>
-
           {!isLogin && (
             <div className="inputWrapper">
               <input
@@ -81,13 +78,11 @@ const Auth: FC = () => {
               )}
             </div>
           )}
-
           <div className="inputWrapper">
             <button type="submit" disabled={loading}>
               {isLogin ? 'Login' : 'Create account'}
             </button>
           </div>
-
           <p
             onClick={() => setIsLogin(!isLogin)}
             style={{ cursor: 'pointer', opacity: 0.7 }}

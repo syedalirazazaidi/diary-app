@@ -56,9 +56,12 @@ const Diaries: FC = () => {
         inputValue: 'private',
       },
     ])) as any;
+    console.log(result, '<<<POPOP');
 
     if (result.value) {
       const { value } = result;
+      
+    console.log(value, 'POPOP');
       const { diary, user: _user } = await http.post<
         Partial<Diary>,
         { diary: Diary; user: User }
@@ -67,8 +70,8 @@ const Diaries: FC = () => {
         type: value[1],
         userId: user?.id,
       });
+      console.log(diary,"us",user,"koko")
       if (diary && user) {
-        console.log([diary], '', user, '');
         dispatch(addDiary([diary] as Diary[]));
         // dispatch(addDiary([diary] as Diary[]));
         dispatch(setUser(_user));

@@ -72,7 +72,7 @@ const DiaryTile: FC<Props> = (props) => {
       </h2>
       <p className="subtitle">{totalEntries ?? '0'} saved entries</p>
 
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex',flexWrap:'wrap' }}>
         <button
           style={buttonStyle}
           onClick={() => {

@@ -6,11 +6,14 @@ const diaries = createSlice({
   initialState: [] as Diary[],
   reducers: {
     addDiary(state, { payload }: PayloadAction<Diary[]>) {
+      
       const diariesToSave = payload.filter((diary) => {
+        console.log(diary,"DIARY")
         return state.findIndex((item) => item.id === diary.id) === -1;
       });
       state.push(...diariesToSave);
     },
+    // The first index of the element in the array; -1 if not found.
     updateDiary(state, { payload }: PayloadAction<Diary>) {
       const { id } = payload;
       const diaryIndex = state.findIndex((diary) => diary.id === id);
