@@ -26,6 +26,7 @@ const DiaryTile: FC<Props> = (props) => {
   const dispatch = useAppDispatch();
 
   const totalEntries = props.diary?.entryIds?.length;
+  console.log(totalEntries,"len")
 
   const saveChanges = () => {
     http

@@ -166,7 +166,7 @@ button:focus {
   background: rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 800px) {
+@media (min-width: 768px) {
   .two-cols .left {
     width: 25%;
   }
@@ -175,12 +175,15 @@ button:focus {
     width: 75%;
   }
 }
-/* @media only screen and (max-width: 600px){
-  .editor {
-    background-color: #f85032;
-    flex-wrap: wrap;
+@media only screen and (max-width: 800px){
+  .two-cols .left {
+    width: 25%;
   }
-} */
+
+  .two-cols .right {
+    width: 75%;
+  }
+}
 
 @keyframes fadeIn {
   0% {
